@@ -38,7 +38,9 @@ Download the necessary Hadoop/Hive Jars and add it via external JAR to your proj
 scp -r -P2222 <path>/<udf.jar> <user>@<address>:/<path>
 ```
 3) Register the JAR to the class path via hive shell
-	> ADD JAR <path>/<udf.jar>;
+```sh
+ADD JAR <path>/<udf.jar>;
+```
 4) The registered JAR should be visible via:
 ```sh
 LIST JARS;
