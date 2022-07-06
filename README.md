@@ -34,16 +34,23 @@ Download the necessary Hadoop/Hive Jars and add it via external JAR to your proj
 ### Upload the UDFs
 1) Create a JAR from the UDFS package.
 2) Upload the JAR f.e. via SCP to the cluster
-	> scp -r -P2222 <path>/<udf.jar> <user>@<address>:/<path>
+```sh
+scp -r -P2222 <path>/<udf.jar> <user>@<address>:/<path>
+```
 3) Register the JAR to the class path via hive shell
 	> ADD JAR <path>/<udf.jar>;
 4) The registered JAR should be visible via:
-	> LIST JARS;
-
+```sh
+LIST JARS;
+```
 5) Create a function from the regisitered JAR.
-	> CREATE TEMPORARY FUNCTION <alias> AS '<package>.<method>';
+```sh
+CREATE TEMPORARY FUNCTION <alias> AS '<package>.<method>';
+```
 6) After you can test your functions as usual:
-	> SELECT encaes128("scalefree.com",hex("secret"));
+```sh
+SELECT encaes128("scalefree.com",hex("secret"));
+```
 
 
 
