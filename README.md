@@ -14,8 +14,10 @@ All methods are in the package: hive_udfs
 
 
 ### Key Generation
-    UDFKeyGen128 () -> String (Hex)
-    UDFKeyGen256 () -> String (Hex)
+    UDFKeyGen128 (arg:id) -> String (Hex)
+    UDFKeyGen256 (arg:id) -> String (Hex)
+
+Pass an id, to ensure different results for each call. Otherwise hive is not able to reset the salt.
 
 ### Encryption/Decryption using AES/CBC/PKCS5Padding
 arg: Text to encrypt/decrypt, arg1: password or key in hex
